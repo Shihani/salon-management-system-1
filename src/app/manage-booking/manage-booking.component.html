@@ -1,0 +1,149 @@
+<app-header></app-header>
+
+
+<div class="container">
+    <h2>Manage Appointment</h2>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Customer Name</th>
+          <th>Service</th>
+          <th>Booking Date</th>
+          <th>Booking Time</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>John</td>
+          <td>123587496</td>
+          <td>john@example.com</td>
+          <td>surat</td>
+          <td><button class="fas fa-edit btn-warning"></button>&nbsp;
+            <button class="fas fa-trash-alt btn-danger"></button>
+          </td>
+        </tr>
+        <tr>
+          <td>Mary</td>
+          <td>785236</td>
+          <td>mary@example.com</td>
+          <td>ahm</td>
+          <td><button class="fas fa-edit btn-warning" data-toggle="modal" data-target="#myModal"></button>&nbsp;
+            <button class="fas fa-trash-alt btn-danger" data-toggle="modal"></button>
+          </td>
+        </tr>
+        <tr>
+          <td>July</td>
+          <td>7458963210</td>
+          <td>july@example.com</td>
+          <td>Mumbai</td>
+          <td><button class="fas fa-edit btn-warning" ></button>&nbsp;
+            <button class="fas fa-trash-alt btn-danger"></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+   <!-- Modal -->
+   <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" style="text-align: center;">Edit Customer Detail</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+              <form class="form-horizontal" action="/action_page.php">
+                <div class="form-group">
+                  <label class="control-label col-sm-4" for="name">Customer Name:</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-4" for="number">Contact Number:</label>
+                  <div class="col-sm-10">
+                    <input type="number" class="form-control" id="number" placeholder="Enter Number" name="number">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-4" for="email">Email:</label>
+                  <div class="col-sm-10">
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-4" for="password">Password:</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="password" placeholder="Enter Password" name="password">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-4" for="cpassword">Confirm Password :</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="cpassword" placeholder="Enter Confirm Password " name="cpassword">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-4" for="email">Appartment Name:</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="aname" placeholder="Enter email" name="aname">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-4" for="email">Landmark:</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="landmark" placeholder="Enter Landmark" name="landmark">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-4" for="pwd">Area:</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="area" placeholder="Enter Area" name="area">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-4" for="pwd">Town/City:</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="city" placeholder="Enter Town/City" name="city">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-4" for="pwd">State:</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="state" placeholder="Enter State" name="state">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-4" for="pwd">Pincode:</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="pincode" placeholder="Enter Pincode" name="pincode">
+                  </div>
+                </div>
+                <div>
+                    <label class="control-label col-sm-4" for="gender">Gender:</label>
+                  <div>
+                    <div class="radio">
+                      <label><input type="radio" name="female" checked>Female</label>
+                    </div>
+                    <div class="radio">
+                      <label><input type="radio" name="male">Male</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-success">Submit</button>
+                  </div>
+                </div>
+              </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<app-footer></app-footer>

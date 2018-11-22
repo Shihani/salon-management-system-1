@@ -1,0 +1,65 @@
+<app-header></app-header>
+
+  <div class="container col-md-6" style="margin-bottom: 100px;">
+      <h2>Add Service Type</h2>
+      <form class="form-horizontal" action="post" #serviceTypeForm="ngForm">
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="stype">Service Type:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="stype" placeholder="Enter service type" name="name" [(ngModel)]="serviceTypeObj.name" #name="ngModel">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-success" (click)="submit()">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="container col-md-6">
+        <h2>Add Service</h2>
+        <form class="form-horizontal" action="post" #serviceForm="ngForm">
+          <div class="form-group">
+            <label class="control-label col-sm-4" for="sname">Service Name:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="name" placeholder="Enter Service Name" name="name" [(ngModel)]="service2TypeObj.name" #name="ngModel">
+            </div>
+          </div>
+          <div class="form-group">
+              <label for="cat" class="control-label col-sm-4">Select Service category:</label>
+              <select
+            class="form-control"
+            name="txtService"
+            id="txtService"
+            [(ngModel)]="service2TypeObj.typeid"
+            #txtService="ngModel"
+          >
+            <option
+              *ngFor="let st of allServiceType"
+              value="{{ st.typeid }}"
+              >{{ st.name }}</option
+            >
+          </select>
+            </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="charge">Charge:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="charge" placeholder="Enter Charge" name="price" [(ngModel)]="service2TypeObj.price" #price="ngModel">
+            </div>
+          </div>
+          <div class="form-group">
+              <label class="control-label col-sm-2" for="sdescription">Description:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="sdescription" placeholder="Enter description" name="typedescription" [(ngModel)]="service2TypeObj.typedescription" #typedescription="ngModel">
+              </div>
+            </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-success" (click)="submit2()">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+<!-- <app-footer></app-footer> -->

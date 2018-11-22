@@ -1,0 +1,136 @@
+<app-header></app-header>
+<div class="container-fluid" style="margin-bottom: 100px;">
+  <section id="hospital-form" class="mt-5 ml-5 col-md-10">
+    <br />
+    <div class="widget-content nopadding">
+      <div class="container">
+        <h2>Book Appointment</h2>
+        <form class="form-horizontal" action="/action_page.php">
+          <div class="form-group col-md-10">
+            <label for="cname">Select Customer Name:</label>
+            <select class="form-control" id="cname">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+          </div>
+          <div class="form-group col-md-10">
+            <label for="cname">Select Services:</label>
+            <table class="table">
+              <tr>
+                <td>
+                <div>
+                  <h6>HairCut</h6>
+                  <div class="form-check">
+                    <label>
+                      <input type="checkbox" name="check" checked />
+                      <span class="label-text">Option 01</span>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <label>
+                      <input type="checkbox" name="check" />
+                      <span class="label-text">Option 02</span>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <label>
+                      <input type="checkbox" name="check" />
+                      <span class="label-text">Option 03</span>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <label>
+                      <input type="checkbox" name="check" disabled />
+                      <span class="label-text">Option 04</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div>
+                  <h6>Massage</h6>
+                  <div class="form-check">
+                    <label>
+                      <input type="checkbox" name="check" checked />
+                      <span class="label-text">Option 01</span>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <label>
+                      <input type="checkbox" name="check" />
+                      <span class="label-text">Option 02</span>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <label>
+                      <input type="checkbox" name="check" />
+                      <span class="label-text">Option 03</span>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <label>
+                      <input type="checkbox" name="check" disabled />
+                      <span class="label-text">Option 04</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              </tr>
+            </table>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd"
+              >Date of Booking:</label
+            >
+            <div class="col-sm-10">
+              <input
+                type="date"
+                class="form-control"
+                id="dob"
+                placeholder="Enter Date of booking"
+                name="dob"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd"
+              >Booking Date:</label
+            >
+            <div class="col-sm-10">
+              <input
+                type="date"
+                class="form-control"
+                id="bdate"
+                placeholder="Enter Booking Date"
+                name="bdate"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+              <label class="control-label col-sm-2" for="pwd"
+                >Select Time:</label
+              >
+              <div class="col-sm-10">
+                <input
+                  type="time"
+                  class="form-control"
+                  id="btime"
+                  placeholder="select appointment time"
+                  name="btime"
+                />
+              </div>
+            </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <br />
+</div>
+<app-footer></app-footer>

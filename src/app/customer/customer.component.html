@@ -1,0 +1,86 @@
+<app-header></app-header>
+<div class="container-fluid" style="margin-bottom: 100px;">
+  <section id="hospital-form" class="mt-5 ml-5 col-md-10">
+    <br />
+ <div class="widget-content nopadding">
+  <div class="container">
+    <h2>Add Customer</h2>
+    <form class="form-horizontal" action="post" #customerTypeForm="ngForm">
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="name">Customer Name:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name" [(ngModel)]="customerTypeObj.name" #name="ngModel">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="number">Contact Number:</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" id="number" placeholder="Enter Number" name="contact" [(ngModel)]="customerTypeObj.contact" #contact="ngModel">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="email">Email:</label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" [(ngModel)]="customerTypeObj.email" #email="ngModel">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="email">Appartment Name:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="aname" placeholder="Enter email" name="house_no" [(ngModel)]="customerTypeObj.house_no" #house_no="ngModel">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="email">Landmark:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="landmark" placeholder="Enter Landmark" name="landmark" [(ngModel)]="customerTypeObj.landmark" #landmark="ngModel">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="pwd">Area:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="area" placeholder="Enter Area" name="area" [(ngModel)]="customerTypeObj.area" #area="ngModel">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="pwd">Town/City:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="city" placeholder="Enter Town/City" name="city" [(ngModel)]="customerTypeObj.city" #city="ngModel">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="pwd">State:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="state" placeholder="Enter State" name="state" [(ngModel)]="customerTypeObj.state" #state="ngModel">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="pwd">Pincode:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="pincode" placeholder="Enter Pincode" name="pincode" [(ngModel)]="customerTypeObj.pincode" #pincode="ngModel">
+        </div>
+      </div>
+      <div>
+          <label class="control-label col-sm-2" for="gender">Gender:</label>
+        <div>
+          <div class="radio">
+            <label><input type="radio" name="gender" value="1" [(ngModel)]="customerTypeObj.gender" #gender="ngModel">Female</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="gender" value="0" [(ngModel)]="customerTypeObj.gender" #gender="ngModel">Male</label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-success" (click)="submit()">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+        </div>
+  </section>
+  <br />
+</div>
+<app-footer></app-footer>
