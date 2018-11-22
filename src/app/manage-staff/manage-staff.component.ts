@@ -8,6 +8,20 @@ import { AdminService } from '../admin.service';
 })
 export class ManageStaffComponent implements OnInit {
 
+  public staffTypeObj = {
+    id: '',
+    name: '',
+    email: '',
+    contact: '',
+    house_no: '',
+    landmark: '',
+    area: '',
+    city: '',
+    state: '',
+    pincode: '',
+    gender: '',
+    joining_date: ''
+  };
   allStaff = [];
 
   constructor(public adminService: AdminService) {}
@@ -19,5 +33,24 @@ export class ManageStaffComponent implements OnInit {
       }
     )
   }
+
+  editStaff(staffObj) {
+    this.staffTypeObj = staffObj;
+  }
+
+  deleteStaff(id) {
+    this.adminService.deleteStaff(id).subscribe(res => {
+      console.log(res);
+    });
+  }
+
+  updateStaff() {
+    this.adminService.updateStaff(this.staffTypeObj).subscribe(
+      res => {
+        console.log('Staff Updated: ' + res.data);
+      }
+    );
+  }
+
 
 }

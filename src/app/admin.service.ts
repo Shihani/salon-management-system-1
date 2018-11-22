@@ -167,6 +167,42 @@ export class AdminService {
       );
   }
 
+  updateStaff(staffObj) {
+    const headers = new Headers({
+      // 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
+      // 'Access-Control-Allow-Origin': '*'
+      'Content-Type': 'application/json;charset=ISO-8859-1'
+    });
+
+    const options = new RequestOptions({ headers: headers });
+    const data: object = staffObj;
+    return this._http
+      .put(environment.apiURL + 'updatestaff', data, options)
+      .pipe(
+        map(res => {
+          return { status: res.status, data: res.json() };
+        })
+      );
+  }
+
+  updatecustomer(customerObj) {
+    const headers = new Headers({
+      // 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
+      // 'Access-Control-Allow-Origin': '*'
+      'Content-Type': 'application/json;charset=ISO-8859-1'
+    });
+
+    const options = new RequestOptions({ headers: headers });
+    const data: object = customerObj;
+    return this._http
+      .put(environment.apiURL + 'updatecustomer', data, options)
+      .pipe(
+        map(res => {
+          return { status: res.status, data: res.json() };
+        })
+      );
+  }
+
   deleteStaff(id) {
     const headers = new Headers({
       // 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',

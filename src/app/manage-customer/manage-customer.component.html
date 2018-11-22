@@ -19,7 +19,7 @@
           <td>{{ cc.contact }}</td>
           <td>{{ cc.email }}</td>
           <td>{{ cc.house_no + ',' + cc.landmark + ',' + cc.area + ',' + cc.city + ',' + cc.state + ',' + cc.pincode }}</td>
-          <td><button class="fas fa-edit btn-warning" data-toggle="modal" data-target="#myModal"></button>&nbsp;
+          <td><button class="fas fa-edit btn-warning" data-toggle="modal" data-target="#myModal"(click)="editCustomer(cc)"></button>&nbsp;
             <button class="fas fa-trash-alt btn-danger" (click)="deleteCustomer(cc.id)"></button>
           </td>
         </tr>
@@ -36,90 +36,78 @@
             <button type="button" class="close" data-dismiss="modal">&times;</button>
           </div>
           <div class="modal-body">
-              <form class="form-horizontal" action="/action_page.php">
-                <div class="form-group">
-                  <label class="control-label col-sm-4" for="name">Customer Name:</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name">
+              <form class="form-horizontal" action="post" #customerTypeForm="ngForm">
+                  <div class="form-group">
+                    <label class="control-label col-sm-4" for="name">Customer Name:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name" [(ngModel)]="customerTypeObj.name" #name="ngModel">
+                    </div>
                   </div>
-                </div>
-                <div class="form-group">
-                  <label class="control-label col-sm-4" for="number">Contact Number:</label>
-                  <div class="col-sm-10">
-                    <input type="number" class="form-control" id="number" placeholder="Enter Number" name="number">
+                  <div class="form-group">
+                    <label class="control-label col-sm-4" for="number">Contact Number:</label>
+                    <div class="col-sm-10">
+                      <input type="number" class="form-control" id="number" placeholder="Enter Number" name="contact" [(ngModel)]="customerTypeObj.contact" #contact="ngModel">
+                    </div>
                   </div>
-                </div>
-                <div class="form-group">
-                  <label class="control-label col-sm-4" for="email">Email:</label>
-                  <div class="col-sm-10">
-                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                  <div class="form-group">
+                    <label class="control-label col-sm-4" for="email">Email:</label>
+                    <div class="col-sm-10">
+                      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" [(ngModel)]="customerTypeObj.email" #email="ngModel">
+                    </div>
                   </div>
-                </div>
-                <div class="form-group">
-                  <label class="control-label col-sm-4" for="password">Password:</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="password" placeholder="Enter Password" name="password">
+                  <div class="form-group">
+                    <label class="control-label col-sm-4" for="email">Appartment Name:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="aname" placeholder="Enter email" name="house_no" [(ngModel)]="customerTypeObj.house_no" #house_no="ngModel">
+                    </div>
                   </div>
-                </div>
-                <div class="form-group">
-                  <label class="control-label col-sm-4" for="cpassword">Confirm Password :</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="cpassword" placeholder="Enter Confirm Password " name="cpassword">
+                  <div class="form-group">
+                    <label class="control-label col-sm-4" for="email">Landmark:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="landmark" placeholder="Enter Landmark" name="landmark" [(ngModel)]="customerTypeObj.landmark" #landmark="ngModel">
+                    </div>
                   </div>
-                </div>
-                <div class="form-group">
-                  <label class="control-label col-sm-4" for="email">Appartment Name:</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="aname" placeholder="Enter email" name="aname">
+                  <div class="form-group">
+                    <label class="control-label col-sm-4" for="pwd">Area:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="area" placeholder="Enter Area" name="area" [(ngModel)]="customerTypeObj.area" #area="ngModel">
+                    </div>
                   </div>
-                </div>
-                <div class="form-group">
-                  <label class="control-label col-sm-4" for="email">Landmark:</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="landmark" placeholder="Enter Landmark" name="landmark">
+                  <div class="form-group">
+                    <label class="control-label col-sm-4" for="pwd">Town/City:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="city" placeholder="Enter Town/City" name="city" [(ngModel)]="customerTypeObj.city" #city="ngModel">
+                    </div>
                   </div>
-                </div>
-                <div class="form-group">
-                  <label class="control-label col-sm-4" for="pwd">Area:</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="area" placeholder="Enter Area" name="area">
+                  <div class="form-group">
+                    <label class="control-label col-sm-4" for="pwd">State:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="state" placeholder="Enter State" name="state" [(ngModel)]="customerTypeObj.state" #state="ngModel">
+                    </div>
                   </div>
-                </div>
-                <div class="form-group">
-                  <label class="control-label col-sm-4" for="pwd">Town/City:</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="city" placeholder="Enter Town/City" name="city">
+                  <div class="form-group">
+                    <label class="control-label col-sm-4" for="pwd">Pincode:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="pincode" placeholder="Enter Pincode" name="pincode" [(ngModel)]="customerTypeObj.pincode" #pincode="ngModel">
+                    </div>
                   </div>
-                </div>
-                <div class="form-group">
-                  <label class="control-label col-sm-4" for="pwd">State:</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="state" placeholder="Enter State" name="state">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="control-label col-sm-4" for="pwd">Pincode:</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="pincode" placeholder="Enter Pincode" name="pincode">
-                  </div>
-                </div>
-                <div>
-                    <label class="control-label col-sm-4" for="gender">Gender:</label>
                   <div>
-                    <div class="radio">
-                      <label><input type="radio" name="female" checked>Female</label>
-                    </div>
-                    <div class="radio">
-                      <label><input type="radio" name="male">Male</label>
+                      <label class="control-label col-sm-4" for="gender">Gender:</label>
+                    <div>
+                      <div class="radio">
+                        <label><input type="radio" name="gender" value="1" [(ngModel)]="customerTypeObj.gender" #gender="ngModel">Female</label>
+                      </div>
+                      <div class="radio">
+                        <label><input type="radio" name="gender" value="0" [(ngModel)]="customerTypeObj.gender" #gender="ngModel">Male</label>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-success">Submit</button>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <button type="submit" class="btn btn-success" (click)="updatecustomer()">Update</button>
+                    </div>
                   </div>
-                </div>
-              </form>
+                </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
