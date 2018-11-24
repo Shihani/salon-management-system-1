@@ -2,6 +2,11 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.2.
 
+# Description
+
+Salon Mangement Booking system is providing basic functionality such as manage appointment, customer, staff, service etc.
+This repository is front end of Salon Booking System using Angular 6.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
