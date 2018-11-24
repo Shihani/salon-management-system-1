@@ -1,11 +1,11 @@
-# SBS
+# SBMS
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.2.
 
 # Description
 
-Salon Mangement Booking system is providing basic functionality such as manage appointment, customer, staff, service etc.
-This repository is front end of Salon Booking System using Angular 6.
+Salon Booking Management system is providing basic functionality such as manage appointment, customer, staff, service etc.
+This repository is front end of Salon Booking Management System using Angular 6.
 
 ## Development server
 
